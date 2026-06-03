@@ -19,8 +19,8 @@ def calculate_shipping(destination_uf: str, weight_kg: float, order_value: float
         try:
             response = stub.CalculateShipping(request)
             print("\n")
-            print("==== Cotação de frete ====")
-            print("==========================")
+            print("Cotação de frete")
+            print("----------------")
             print(f"Destino: {response.destination_uf}")
             print(f"Região: {response.destination_region}")
             print(f"Preço do frete: R$ {response.shipping_price:.2f}")

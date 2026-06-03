@@ -3,5 +3,5 @@ generate-unary:
 	--python_out=unary-calls/src --grpc_python_out=unary-calls/src \
 	unary-calls/proto/shipping.proto
 
-unary-server:
+run-unary-call:
 	cd unary-calls && python3 src/server.py
