@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service ShippingService {
+  rpc CalculateShipping(ShippingRequest) returns (ShippingResponse);
+}
+
+message ShippingRequest {
+  string destination_uf = 1;
+  double weight_kg = 2;
+  double order_value = 3;
+}
+
+message ShippingResponse {
+  string destination_uf = 1;
+  string destination_region = 2;
+  double shipping_price = 3;
+  int32 estimated_days = 4;
+  string message = 5;
+}
