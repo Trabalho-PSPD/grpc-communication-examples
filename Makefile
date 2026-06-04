@@ -18,3 +18,14 @@ generate-server-stream:
 
 run-server-stream:
 	cd server-streaming-calls && python3 src/server.py
+
+
+# ========= Client Streaming Calls =========
+
+generate-client-stream:
+	python3 -m grpc_tools.protoc -I client-streaming-calls/proto \
+	--python_out=client-streaming-calls/src --grpc_python_out=client-streaming-calls/src \
+	client-streaming-calls/proto/video_upload.proto
+
+run-client-stream:
+	cd client-streaming-calls && python3 src/server.py

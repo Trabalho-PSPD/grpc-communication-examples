@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+service VideoUploadService {
+    rpc UploadVideo(stream VideoChunk) returns (UploadSummary);
+}
+
+message VideoChunk {
+    string filename = 1;
+    bytes data = 2;
+    int64 chunk_number = 3;
+    int64 total_bytes = 4;
+    string content_type = 5;
+}
+
+message UploadSummary {
+    string filename = 1;
+    int64 chunks_received = 2;
+    int64 total_bytes_received = 3;
+    string video_url = 4;
+    string message = 5;
+}
