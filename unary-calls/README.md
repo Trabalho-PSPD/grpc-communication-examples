@@ -10,17 +10,17 @@ A aplicação simula uma cotação de frete a partir da filial de SP.
 
 O cliente informa:
 
-* UF de destino;
-* peso do pedido em kg;
-* valor total do pedido.
+* UF de destino
+* peso do pedido em kg
+* valor total do pedido
 
 O servidor gRPC processa esses dados e retorna:
 
-* UF de destino;
-* região do estado;
-* valor estimado do frete;
-* prazo médio de entrega;
-* mensagem explicativa.
+* UF de destino
+* região do estado
+* valor estimado do frete
+* prazo médio de entrega
+* mensagem explicativa
 
 Estados mais próximos de São Paulo, especialmente os da região Sudeste, possuem prazos menores. Estados mais distantes possuem prazos e tarifas maiores.
 
@@ -39,12 +39,12 @@ Cliente  <-  ShippingResponse <-  Servidor
 
 Esse tipo de comunicação é adequado para operações simples de consulta ou cálculo, como:
 
-* cotação de frete;
-* consulta de estoque;
-* autenticação;
-* validação de dados;
-* cálculo de preço;
-* busca de informações pontuais.
+* cotação de frete
+* consulta de estoque
+* autenticação
+* validação de dados
+* cálculo de preço
+* busca de informações pontuais
 
 ## Estrutura da pasta
 
@@ -102,12 +102,6 @@ message ShippingResponse {
 ## Requisitos
 
 Para executar o exemplo, instale as dependências a partir da raiz do repositório:
-
-```bash
-pip install -r requirements.txt
-```
-
-Ou, usando ambiente virtual:
 
 ```bash
 python3 -m venv .venv
@@ -182,14 +176,12 @@ O servidor valida os dados recebidos na requisição.
 
 Exemplos de erros tratados:
 
-* UF inválida;
-* peso menor ou igual a zero;
-* valor do pedido negativo.
+* UF inválida
+* peso menor ou igual a zero
+* valor do pedido negativo
 
 Quando algum dado inválido é enviado, o servidor retorna erro gRPC com status `INVALID_ARGUMENT`.
 
 ## Conclusão
 
 Este exemplo demonstra uma aplicação prática de **Unary Call** em gRPC. O modelo é adequado para cenários em que o cliente precisa enviar uma única solicitação e receber uma única resposta, como ocorre na cotação de frete.
-
-A aplicação utiliza Protocol Buffers para definir o contrato entre cliente e servidor, e gRPC para realizar a comunicação remota de forma estruturada e eficiente.
