@@ -192,13 +192,15 @@ python client-streaming-calls/src/client.py <CAMINHO_DO_VIDEO>
 
 Exemplos:
 
+> O arquivo informado precisa existir localmente para que o cliente consiga lê-lo e enviar seus chunks ao servidor.
+
 ```bash
 python client-streaming-calls/src/client.py downloads/video.mp4
 python client-streaming-calls/src/client.py downloads/flower.mp4
 python client-streaming-calls/src/client.py downloads/sintel.mp4
 ```
 
-O arquivo informado precisa existir localmente para que o cliente consiga lê-lo e enviar seus chunks ao servidor.
+Os arquivos usados nesses exemplos podem ser obtidos previamente utilizando o serviço de **Server Streaming Calls** deste repositório. Por exemplo, é possível baixar um vídeo com o exemplo `server-streaming-calls` e depois utilizar o arquivo gerado como entrada para o exemplo de **Client Streaming Call**.
 
 ## Exemplo de saída
 
