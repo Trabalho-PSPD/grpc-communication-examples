@@ -8,7 +8,6 @@ generate-unary:
 run-unary-call:
 	cd unary-calls && python3 src/server.py
 
-
 # ========= Server Streaming Calls =========
 
 generate-server-stream:
@@ -19,7 +18,6 @@ generate-server-stream:
 run-server-stream:
 	cd server-streaming-calls && python3 src/server.py
 
-
 # ========= Client Streaming Calls =========
 
 generate-client-stream:
@@ -29,3 +27,13 @@ generate-client-stream:
 
 run-client-stream:
 	cd client-streaming-calls && python3 src/server.py
+
+# ========= Bidirectional Streaming Calls =========
+
+generate-bidirectional-stream:
+	python3 -m grpc_tools.protoc -I bidirectional-streaming-calls/proto \
+	--python_out=bidirectional-streaming-calls/src --grpc_python_out=bidirectional-streaming-calls/src \
+	bidirectional-streaming-calls/proto/chat.proto
+
+run-bidirectional-stream:
+	cd bidirectional-streaming-calls && python3 src/server.py
