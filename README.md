@@ -48,6 +48,8 @@ Neste repositório, o exemplo de Unary Call simula um serviço de **cotação de
 
 Exemplo no repositório: [unary-calls](./unary-calls)
 
+---
+
 ### Server Streaming Calls
 
 No modelo **Server Streaming**, o cliente envia uma única requisição e o servidor retorna várias respostas em sequência.
@@ -58,6 +60,8 @@ Neste repositório, o exemplo de Server Streaming simula um serviço de **stream
 
 Exemplo no repositório: [server-streaming-calls](./server-streaming-calls)
 
+---
+
 ### Client Streaming Calls
 
 No modelo **Client Streaming**, o cliente envia várias mensagens para o servidor e, ao final, o servidor retorna uma única resposta.
@@ -67,6 +71,8 @@ Esse modelo pode ser utilizado em cenários como upload de arquivos grandes, env
 Neste repositório, o exemplo de Client Streaming simula um serviço de **upload de vídeo**, em que o cliente envia um arquivo em chunks e o servidor retorna uma URL simulada do vídeo armazenado.
 
 Exemplo no repositório: [client-streaming-calls](./client-streaming-calls)
+
+---
 
 ### Bidirectional Streaming Calls
 
@@ -79,6 +85,8 @@ Neste repositório, o exemplo de Bidirectional Streaming simula um **chat simple
 A implementação foi mantida simples para fins didáticos. Como o exemplo utiliza `input()` no terminal, a comunicação acontece de forma sequencial e pode apresentar bloqueios enquanto um dos lados está digitando. Uma possível melhoria seria utilizar `threading` e `queue` para separar leitura do terminal e recebimento das mensagens.
 
 Exemplo no repositório: [bidirectional-streaming-calls](./bidirectional-streaming-calls)
+
+---
 
 ## Requisitos
 
@@ -95,6 +103,8 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
+
+---
 
 ## Gerando os arquivos a partir do Protobuf
 
@@ -125,6 +135,8 @@ make generate-client-stream
 ```bash
 make generate-bidirectional-stream
 ```
+
+---
 
 ## Executando os exemplos
 
@@ -188,11 +200,15 @@ Executar o cliente:
 python bidirectional-streaming-calls/src/client.py --username Lucas
 ```
 
+---
+
 ## Observação sobre os comandos
 
 Os comandos principais de compilação e execução devem ser consultados no arquivo `Makefile`, pois ele centraliza a forma correta de gerar os arquivos `.proto` e executar cada exemplo.
 
 Cada pasta também contém um `README.md` próprio com instruções mais detalhadas sobre o contexto da aplicação e os passos para rodar o exemplo correspondente.
+
+---
 
 ## Objetivo acadêmico
 
