@@ -18,7 +18,8 @@ Cada exemplo possui seu próprio arquivo `.proto`, implementação de `server`, 
 ├── unary-calls/
 ├── server-streaming-calls/
 ├── client-streaming-calls/
-├── bidirectional-streaming-calls/
+├── bidirecional-streaming-calls/
+├── .gitignore
 ├── Makefile
 ├── requirements.txt
 └── README.md
